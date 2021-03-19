@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 mongoose.connect(
     //db connection string
-    'mongodb://localhost/movies',
+    'mongodb://localhost/flights',
     // mongoose connection options
     {
         useNewUrlParser: true,
