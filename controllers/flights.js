@@ -7,19 +7,19 @@ module.exports = {
 };
 
 function index(req, res) {
-   Flight.find({}, function(err, flight) {
-    res.render('flight/index', { flight });
+   Flight.find({}, function(err, flights) {
+    res.render('flights/index', { flights });
    });
   }
 
-function newMovie(req, res) {
+function newFlight(req, res) {
     res.render('flights/new');
 }
 
 function create(req, res) {
   const flight = new Flight(req.body);
   flight.save(function(err) {
-    if (err) return res.render('fights/new');
+    if (err) return res.render('flights/new');
     console.log(flight);
     res.redirect('/flights');
   });
