@@ -9,22 +9,22 @@
         <option value="UNITED">United</option>
         <option value="ALASKA">Alaska Air</option>
     </select>
-  </label><br>
+  </label><br><br>
   <label>Flight Number:
-    <input type="text" name="flightNo">
-  </label><br>
+    <input type="number" name="flightNo">
+  </label><br><br>
   <label>Airport:
-    <select name="airport" value="DEN">
+    <select type="text" name="airport">
         <option value="AUS">AUS</option>
         <option value="DFW">DFW</option>
-        <option value="DEN">DEN</option>
+        <option value="DEN" selected>DEN</option>
         <option value="LAX">LAX</option>
         <option value="SAN">SAN</option>
     </select>
-  </label><br>
+  </label><br><br>
   <label>Departs at:
-    <input type="text" name="date">
-  </label><br>
+    <input type="datetime-local" name="departs">
+  </label><br><br>
   <input type="submit" value="Add Flight">
 </form>
 
