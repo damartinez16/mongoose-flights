@@ -22,10 +22,9 @@ function index(req, res) {
 
 
 function create(req, res) {
-  const flight = new Flight(req.body);
-  flight.save(function(err) {
-    if (err) return res.render('flights/new');
-    console.log(flight);
-    res.redirect('/flights');
-  });
+  if (req.body.departs === '') delete req.body.departs;
+  Flight.create(req.body, function (err, flight) {
+    if (err) console.log(err);
+    res.redirect(`/flights`);
+  })
 }
