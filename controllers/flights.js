@@ -4,8 +4,16 @@ module.exports = {
     new: newFlight,
     create,
     index,
-    show
+    show,
+    delete: deleteFlight
 };
+
+function deleteFlight(req, res) {
+  Flight.findByIdAndDelete(req.params.id, function(err, deletedFlight) {
+      if (err) console.log(err)
+  })
+  res.redirect('/flights');
+}
 
 function index(req, res) {
   Flight.find ({}).sort({departs: "ascending"}).exec(function(err,flights) {
