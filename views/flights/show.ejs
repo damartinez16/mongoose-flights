@@ -11,8 +11,10 @@
 </section>
 <div>Tickets:</div><br><a href="/flights/<%=flight._id%>/tickets/new">Add Ticket</a>
 <ul>
+    <nav><strong>Seat Price</strong></nav>
+    <br>
   <% tickets.forEach(function (t) { %>
-    <li><%=t.seat%> <small><%=t.price%></small></li>
+    <li><%=t.seat%> $<%=t.price%></li>
    <% }); %>
 </ul>
 <br><br><h2>Destination</h2>
